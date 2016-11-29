@@ -21,7 +21,7 @@ public class RentalSystem
 	private RentalHandler 		RentalH;
 	private	SearchHandler 		SearchH;
 	private Database 			database;
-	private GUISystem			SystemGui;
+	private ClasseSysteme			SystemGui;
 	
 
 	
@@ -40,7 +40,7 @@ public class RentalSystem
 		this.SearchH 		= new SearchHandler(this.ItemH, this.CustomerH);
 		this.RentalH.setHandlers(this.ItemH, this.CustomerH);
 		this.database 		= new Database();
-		this.SystemGui		= new GUISystem(this);
+		this.SystemGui		= new ClasseSysteme(this);
 		//---------------------------------------
 		
 		
@@ -154,6 +154,6 @@ public class RentalSystem
 	
 	public static void main(String[] args)
 	{
-		GUILogin Login = new GUILogin();
+		SeConnecter Login = new SeConnecter();
 	}
 }

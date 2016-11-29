@@ -371,7 +371,12 @@ public class InscriptionClient extends JFrame
 	{
 		super();
 		this.cHandler = ch;
-		
+		initiateInstanceVariables();
+		configureFrame();
+		buildLeftPanel();
+		addListToTheRight();
+		updateOutputList();
+		this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 	}
 	
 }

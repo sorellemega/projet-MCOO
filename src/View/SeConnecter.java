@@ -16,9 +16,11 @@ import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
 import Controller.RentalSystem;
+import java.awt.Font;
+import java.awt.Color;
 
 
-public class GUILogin extends JFrame
+public class SeConnecter extends JFrame
 {
 	/**
 	 * 
@@ -79,7 +81,7 @@ public class GUILogin extends JFrame
 	public boolean getLoggedIn(){
 		return this.loggedIn;
 	}
-	public GUILogin() 
+	public SeConnecter() 
 	{
 		super();
 		initiateInstanceVariables();
@@ -93,6 +95,9 @@ public class GUILogin extends JFrame
 		this.contentPane = this.getContentPane();
 		this.contentPane.setLayout(new GridLayout(1, 2));
 		this.userNameField = new JTextField();
+		userNameField.setBackground(Color.PINK);
+		userNameField.setForeground(Color.BLACK);
+		userNameField.setFont(new Font("Lucida Calligraphy", Font.BOLD, 12));
 		this.passwordField = new JPasswordField();
 		this.loggedIn = false;
 	}
@@ -155,7 +160,7 @@ public class GUILogin extends JFrame
 	
 	public static void main(String[] args) 
 	{
-		GUILogin gui = new GUILogin();
+		SeConnecter gui = new SeConnecter();
 		gui.setVisible(true);
 
 	}

@@ -22,8 +22,10 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import java.awt.Color;
+import java.awt.Font;
 
-public class GUISystem extends JFrame
+public class ClasseSysteme extends JFrame
 {
 	
     /**
@@ -40,10 +42,12 @@ public class GUISystem extends JFrame
     private GUISearch guiSearch;
     
     private RentalSystem MainSystemReference;
+    private JPanel panel;
     
-    public GUISystem(RentalSystem MainSystem)
+    public ClasseSysteme(RentalSystem MainSystem)
 	{
     	super();
+    	getContentPane().setFont(new Font("Lucida Calligraphy", Font.PLAIN, 12));
     	this.MainSystemReference = MainSystem;
 		initiateInstanceVariables();
 		configureFrame();
@@ -155,7 +159,7 @@ public class GUISystem extends JFrame
 	
 	private void buildPanel()
 	{
-		JPanel panel = new JPanel();
+		panel = new JPanel();
 		panel.setBorder(BorderFactory.createTitledBorder("Rental System"));
 		
 		buildButtonPanel(panel);
@@ -166,6 +170,8 @@ public class GUISystem extends JFrame
 	private void buildButtonPanel(JPanel thePanel)
 	{
 		JPanel buttonPanel = new JPanel();
+		buttonPanel.setToolTipText("");
+		buttonPanel.setBackground(Color.GRAY);
 		buttonPanel.setLayout(new BoxLayout(buttonPanel, BoxLayout.Y_AXIS));
 		
 		String[] buttonTxt = {"New rental", "Customers", "Items", "Search", "Write newsletter", "Logout"};
@@ -173,8 +179,8 @@ public class GUISystem extends JFrame
 		
 		JButton button = new JButton(buttonTxt[0]);
 		Dimension dim = button.getPreferredSize();
-		buttonPanel.setSize(50*dim.width + 8, 2 * dim.height + 5);
-		buttonPanel.setLocation(20,70);
+		buttonPanel.setSize(0, 0);
+		buttonPanel.setLocation(192,21);
 		
 		// Add all buttons to button panel
 		for(String str: buttonTxt)
@@ -184,6 +190,7 @@ public class GUISystem extends JFrame
 			// connect listener
 			button.addActionListener(buttonListener);
 		}
+		panel.setLayout(null);
 		
 		thePanel.add(buttonPanel);
 		this.contentPane.add(thePanel);

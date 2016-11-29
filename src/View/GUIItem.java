@@ -635,7 +635,6 @@ public class GUIItem extends JFrame
 			this.buttons[counter] = new JButton(str);
 			this.buttons[counter].setSize(new Dimension(100, 200));
 			this.buttons[counter].addActionListener(this.buttonListener);
-			
 			buttonPanel.add(this.buttons[counter]);
 			counter++;
 		}
